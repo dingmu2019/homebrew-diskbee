@@ -8,7 +8,7 @@ cask "diskbee" do
   homepage "https://www.ntfs.pro/"
 
   livecheck do
-    url "https://tmbee-ntfs-cos-20160910-1362000664.cos.accelerate.myqcloud.com/releases/appcast.xml"
+    url "https://www.ntfs.pro/appcast.xml"
     strategy :sparkle, &:short_version
   end
 
@@ -16,4 +16,11 @@ cask "diskbee" do
   depends_on macos: :sequoia
 
   app "DiskBee.app"
+
+  zap trash: [
+    "~/Library/Application Support/NTFSProKit",
+    "~/Library/Application Support/com.ntfsprokit.app",
+    "~/Library/Caches/com.ntfsprokit.app",
+    "~/Library/Preferences/com.ntfsprokit.app.plist",
+  ]
 end

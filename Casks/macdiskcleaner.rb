@@ -8,7 +8,7 @@ cask "macdiskcleaner" do
   homepage "https://www.ntfs.pro/en/cleanup"
 
   livecheck do
-    url "https://tmbee-ntfs-cos-20160910-1362000664.cos.accelerate.myqcloud.com/releases/cleanup/appcast.xml"
+    url "https://www.ntfs.pro/cleanup/appcast.xml"
     strategy :sparkle, &:short_version
   end
 
@@ -16,4 +16,10 @@ cask "macdiskcleaner" do
   depends_on macos: :sonoma
 
   app "MacDiskCleaner.app"
+
+  zap trash: [
+    "~/Library/Application Support/MacDiskCleaner",
+    "~/Library/Caches/com.diskbee.diskcleaner",
+    "~/Library/Preferences/com.diskbee.diskcleaner.plist",
+  ]
 end
