@@ -4,7 +4,7 @@ cask "diskbee" do
 
   url "https://tmbee-ntfs-cos-20160910-1362000664.cos.accelerate.myqcloud.com/releases/DiskBee-#{version}.dmg"
   name "DiskBee"
-  desc "Reads and writes NTFS drives on macOS"
+  desc "Reads and writes NTFS drives"
   homepage "https://www.ntfs.pro/"
 
   livecheck do
@@ -18,8 +18,8 @@ cask "diskbee" do
   app "DiskBee.app"
 
   zap trash: [
-    "~/Library/Application Support/NTFSProKit",
     "~/Library/Application Support/com.ntfsprokit.app",
+    "~/Library/Application Support/NTFSProKit",
     "~/Library/Caches/com.ntfsprokit.app",
     "~/Library/Preferences/com.ntfsprokit.app.plist",
   ]
